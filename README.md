@@ -13,35 +13,28 @@
 ### Step 1
 - Lets create a Connected App. Login to Anypoint Platform -> Access Management -> Connected AppIf you already have an available Connected App in the Anypoint Platform, jump to step x)
 ### Step 2
-- Create an App and name it reference to MCP demo (ie: my-1st-mcp-client-app)
+- Create an App and name it reference to MCP demo (ie: my-1st-mcp-client-app) and save the Client_ID and Client_Secret
 ### Step 3
 - Add the following scope
 ### Step 4
-- Get the Client ID and Client Secret from the connected app you've created from prevous step.      
-### Step 5
 - Change the value for client_id and client_secret in the app.yaml
-### Step 6
+### Step 5
 - Lets run the app. Make sure your runtime version is 4.3 or above
 - Right Click on the Project - Select Run As - Select Mule Application (configure)
 - Click Arguments tab
 - Add the `-Dmule.http.service.implementation=NETTY` to VM Arguments
-### Step 7
 - Click Run
 ----
 # What's Next? Lets configure the MCP Client (ie: Claude)
 ### Step 1
-- Open Claude application
+- Open Claude application -> Go to Claude Settings
 ### Step 2
-- Go to Claude Settings
+- Click Developer from the right selection -> Click Edit Config and it will open a Finder or Windows Explorer
 ### Step 3
-- Click Developer from the right selection
-### Step 4
-- Click Edit Config and it will open a Finder or Windows Explorer
-### Step 5
 - Open the claude_dekstop_config.json to any text editor
-### Step 6
+### Step 4
 - Add the folowing config
-### Step 7
+### Step 5
 - Let's restart the Claude App.
 ----
 # Now what? Test MuleSoft MCP Server and MCP Client?
@@ -52,6 +45,6 @@
 ### Scenario 2:
 - Ask Claude or Cursor to verify if there's an existing API Governance:
   - `Do I have Governance Profile created?`
-### Scenario 1:
+### Scenario 3:
 - Ask Claude or Cursor to check if are there any API that use the API Governance Profile
   - `List the APIs attached to that profile.`
