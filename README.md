@@ -44,7 +44,7 @@
 ### Step 7
 - Let's restart the Claude App.
 
-# Now what? Lets test the Claude and run the Scenario.
+# Now what? Lets test the MuleSoft MCP Server and MCP Client (ie: Cursor, Claude) by testing the scenario listed at the beginning:
 ### Scenario 1:
 - Ask Claude or Cursor the following:
 `Check how many APIs are in my Design Center.`
