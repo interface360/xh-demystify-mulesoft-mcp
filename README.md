@@ -27,7 +27,7 @@
 - Add the `-Dmule.http.service.implementation=NETTY` to VM Arguments
 ### Step 7
 - Click Run
-
+----
 # What's Next? Lets configure the MCP Client (ie: Claude)
 ### Step 1
 - Open Claude application
@@ -43,19 +43,15 @@
 - Add the folowing config
 ### Step 7
 - Let's restart the Claude App.
-
-# Now what? Lets test the MuleSoft MCP Server and MCP Client (ie: Cursor, Claude) by testing the scenario listed at the beginning:
+----
+# Now what? Test MuleSoft MCP Server and MCP Client?
+- Lets test the MuleSoft MCP Server and MCP Client (ie: Cursor, Claude) by testing the scenario listed at the beginning of this exercise:
 ### Scenario 1:
 - Ask Claude or Cursor the following:
-`Check how many APIs are in my Design Center.`
+  - `Check how many APIs are in my Design Center.`
 ### Scenario 2:
 - Ask Claude or Cursor to verify if there's an existing API Governance:
-`Do I have Governance Profile created?`
+  - `Do I have Governance Profile created?`
 ### Scenario 1:
 - Ask Claude or Cursor to check if are there any API that use the API Governance Profile
-`List the APIs attached to that profile.`
-
-`  
-  
-
-Okay, 
+  - `List the APIs attached to that profile.`
