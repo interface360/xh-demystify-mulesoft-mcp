@@ -1,7 +1,7 @@
-# How To Implment an MCP in MuleSoft?
+# How To Implment an MuleSoft MCP that listens from a MCP Client tool.
 ## Demystify MuleSoft MCP Demo
 - The application will demo the MuleSoft MCP Connector Beta.
-## Scenario or Use Case
+## Scenarios/Use Case:
 ### Scenario 1:
 - As a MuleSoft Designer/Developer/Architect, I want to check the Assets my team created in the Design Center without signing in to Anypoint Platform, navigating to Design Center. I want to use an MCP Client like Claude, Cursor or any available tool that can communicate to a MCP server.
 ### Scenario 2:
