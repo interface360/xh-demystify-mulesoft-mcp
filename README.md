@@ -1,4 +1,4 @@
-# How To Implement an MuleSoft MCP listener tool?
+# How To Implement a MuleSoft MCP listener tool?
 ## Demystify MuleSoft MCP Demo
 - The application will demo the MuleSoft MCP Connector Beta.
 ## Scenarios/Use Case:
