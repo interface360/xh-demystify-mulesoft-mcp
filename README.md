@@ -107,3 +107,9 @@ Automating multi-step business processes through natural language commands to a 
 # There you go!
 ### Expand what you have learned and share. Sharing of knowledge is power!
 - By Ray
+
+## What If I Encountered An Error in Claude?
+- Open the **Claude Settings**
+- Click the **Developer** and if the status is **Failed**, click the **OpenLogFolder**
+- Open the file `mcp-server-xh-demystify-mulesoft-mcp.log` and check if you see a suggestion like `sudo chown -R 502:20 "/Users...`
+
