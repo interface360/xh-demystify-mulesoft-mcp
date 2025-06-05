@@ -3,8 +3,9 @@ http:
 anypoint:
   platform:
     host: "anypoint.mulesoft.com"
-    client_id: "<REPLACE_WIT_CONNECTED_APP_CLIENT_ID>"
-    client_secret: "<REPLACE_WIT_CONNECTED_APP_CLIENT_SECRET>"
+    connected_app:
+      client_id: "<REPLACE_WIT_CONNECTED_APP_CLIENT_ID>"
+      client_secret: "<REPLACE_WIT_CONNECTED_APP_CLIENT_SECRET>"
     token_url_v1: "https://anypoint.mulesoft.com/accounts/oauth2/token"
     token_url: "https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token"
     owner_id: "<REPLACE_WITH_USER_OWNER_ID_NOT_USER_NAME>"

@@ -17,7 +17,7 @@ http://www.mulesoft.org/schema/mule/oauth http://www.mulesoft.org/schema/mule/oa
 	<http:request-config name="HTTP_ANYPOINT_PLATFORM" doc:name="HTTP Request configuration" >
 		<http:request-connection host="${anypoint.platform.host}" protocol="HTTPS">
 			<http:authentication >
-				<oauth:client-credentials-grant-type clientId="${anypoint.platform.client_id}" clientSecret="${anypoint.platform.client_secret}" tokenUrl="${anypoint.platform.token_url}" />
+				<oauth:client-credentials-grant-type clientId="${anypoint.platform.connected_app.client_id}" clientSecret="${anypoint.platform.connected_app.client_secret}" tokenUrl="${anypoint.platform.token_url}" />
 			</http:authentication>
 		</http:request-connection>
 	</http:request-config>
