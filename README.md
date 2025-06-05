@@ -30,6 +30,17 @@ Automating multi-step business processes through natural language commands to a 
 - Create an App and name it reference to MCP demo (ie: my-1st-mcp-client-app) and save the Client_ID and Client_Secret
 ### Step 3
 - Add the following scope
+  - API Governance
+    - Governance Administrator
+  - Design Center
+    - Design Center Creator
+    - Design Center Developer
+    - Design Center Viewer
+  - Exchange
+    - Exchange Administrator
+    - Exchange Contributor
+    - Exchange Creator
+    - Exchange Viewer
 ### Step 4
 - Change the value for client_id and client_secret in the app.yaml
 ### Step 5
