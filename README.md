@@ -10,6 +10,11 @@ For the most up-to-date information and to learn how to configure your MuleSoft 
 ## Objective:
 Automating multi-step business processes through natural language commands to a MuleSoft-powered MCP Server.
 
+## Prereq:
+- As of **2025-06-05**:
+  - Mule Runtime Version **4.9.3** or above
+  - Java version **17**
+  
 ## Scenarios/Use Case:
 ### Scenario 1:
 - As a MuleSoft Designer/Developer/Architect, I want to check the Assets my team created in the Design Center without signing in to Anypoint Platform, navigating to Design Center. I want to use an MCP Client like Claude or any available tool that can communicate to a MCP server.
@@ -28,7 +33,7 @@ Automating multi-step business processes through natural language commands to a 
 ### Step 4
 - Change the value for client_id and client_secret in the app.yaml
 ### Step 5
-- Lets run the app. Make sure your runtime version is **4.9.3** or above and Java version is *17*
+- Lets run the app. Make sure your runtime version is **4.9.3** or above and Java version is **17**
 - Right Click on the Project - Select Run As - Select Mule Application (configure)
 - Click Arguments tab
 - Add the `-Dmule.http.service.implementation=NETTY` to VM Arguments
