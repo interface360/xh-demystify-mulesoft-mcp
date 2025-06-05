@@ -1,6 +1,15 @@
 # How To Implement a MuleSoft MCP listener tool?
-## Demystify MuleSoft MCP Demo
-- The application will demo the MuleSoft MCP Connector Beta.
+## Demystify MuleSoft MCP Demo Overview
+
+While this repository provides a comprehensive and robust MCP client to interact with any compliant MCP server, it's important to understand how MuleSoft itself facilitates the exposure of its applications and APIs as MCP servers.
+
+MuleSoft is actively developing and enhancing its capabilities for the Model Context Protocol. Central to this is the [MuleSoft MCP Connector (Beta)](https://docs.mulesoft.com/mcp-connector/latest/). This connector allows MuleSoft developers to easily expose Anypoint Platform assets (like APIs, integrations and even entire Mule applications) as MCP-compliant services. This enables AI agents and other MCP clients to discover, understand and interact with your MuleSoft deployments in a standardized way.
+
+For the most up-to-date information and to learn how to configure your MuleSoft applications as MCP servers, please refer to the official MuleSoft documentation for the [MuleSoft MCP Connector (Beta)](https://docs.mulesoft.com/mcp-connector/latest/). This official connector is the foundation upon which your MuleSoft MCP server implementation will be built, making it the ideal counterpart for the client provided in this repository.
+
+## Objective:
+Automating multi-step business processes through natural language commands to a MuleSoft-powered MCP Server.
+
 ## Scenarios/Use Case:
 ### Scenario 1:
 - As a MuleSoft Designer/Developer/Architect, I want to check the Assets my team created in the Design Center without signing in to Anypoint Platform, navigating to Design Center. I want to use an MCP Client like Claude, Cursor or any available tool that can communicate to a MCP server.
@@ -79,3 +88,6 @@
 ### Scenario 3:
 - Ask Claude or Cursor to check if are there any API that use the API Governance Profile
   - `List the APIs attached to that profile.`
+# There you go!
+### Expand what you have learned and share. Sharing of knowledge is power!
+- By Ray
