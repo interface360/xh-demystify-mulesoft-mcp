@@ -12,7 +12,7 @@ Automating multi-step business processes through natural language commands to a 
 
 ## Scenarios/Use Case:
 ### Scenario 1:
-- As a MuleSoft Designer/Developer/Architect, I want to check the Assets my team created in the Design Center without signing in to Anypoint Platform, navigating to Design Center. I want to use an MCP Client like Claude, Cursor or any available tool that can communicate to a MCP server.
+- As a MuleSoft Designer/Developer/Architect, I want to check the Assets my team created in the Design Center without signing in to Anypoint Platform, navigating to Design Center. I want to use an MCP Client like Claude or any available tool that can communicate to a MCP server.
 ### Scenario 2:
 - As a MuleSoft Architect, I want to check if I have an API Governance Profile create and ready to use without signing in to Anypoint Platform.
 ### Scenario 2:
@@ -78,15 +78,15 @@ Automating multi-step business processes through natural language commands to a 
 - Let's restart the Claude App and make sure the Mule App is running (ie: Localhost or CloudHub).
 ----
 # Now what? Test MuleSoft MCP Server and MCP Client?
-- Lets test the MuleSoft MCP Server and MCP Client (ie: Cursor, Claude) by testing the scenario listed at the beginning of this exercise:
+- Lets test the MuleSoft MCP Server and MCP Client (ie: Claude) by testing the scenario listed at the beginning of this exercise:
 ### Scenario 1:
-- Ask Claude or Cursor the following:
+- Ask Claude with the following:
   - `Check how many APIs are in my Design Center.`
 ### Scenario 2:
-- Ask Claude or Cursor to verify if there's an existing API Governance:
+- Ask Claude to verify if there's an existing API Governance:
   - `Do I have Governance Profile created?`
 ### Scenario 3:
-- Ask Claude or Cursor to check if are there any API that use the API Governance Profile
+- Ask Claude to check if are there any API that use the API Governance Profile
   - `List the APIs attached to that profile.`
 # There you go!
 ### Expand what you have learned and share. Sharing of knowledge is power!
