@@ -25,8 +25,8 @@ http://www.mulesoft.org/schema/mule/oauth http://www.mulesoft.org/schema/mule/oa
 			<http:headers ><![CDATA[#[output application/java
 ---
 {
-	"x-owner-id" : p('mule.owner_id'),
-	"x-organization-id" : p('mule.org_id')
+	"x-owner-id" : p('anypoint.platform.owner_id'),
+	"x-organization-id" : p('anypoint.platform.org_id')
 }]]]></http:headers>
 		</http:request>
 		<logger level="INFO" doc:name="INFO END" doc:id="229e99c0-072e-437b-b77c-56c0eb4e5497" message='#[output json --- { "id": correlationId default uuid(),"flow": "END - what-are-the-available-api-project", "data": payload}]'/>
