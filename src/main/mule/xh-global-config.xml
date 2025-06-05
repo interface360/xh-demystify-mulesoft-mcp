@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:oauth="http://www.mulesoft.org/schema/mule/oauth" xmlns:mcp="http://www.mulesoft.org/schema/mule/mcp"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/mcp http://www.mulesoft.org/schema/mule/mcp/current/mule-mcp.xsd
+http://www.mulesoft.org/schema/mule/oauth http://www.mulesoft.org/schema/mule/oauth/current/mule-oauth.xsd">
+	<configuration-properties doc:name="Configuration properties" doc:id="ef02df3a-ac3d-4370-af12-8bc225bff21d" file="config/app.yaml" />
+	<http:listener-config name="MAIN_HTTP_LISTENER" doc:name="HTTP Listener config">
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<mcp:server-config name="MAIN_MCP_SERVER" doc:name="MCP Server" serverName="mule-mcp-server" serverVersion="1.0.0">
+		<mcp:sse-server-connection listenerConfig="MAIN_HTTP_LISTENER" />
+	</mcp:server-config>
+
+	<http:request-config name="HTTP_ANYPOINT_PLATFORM" doc:name="HTTP Request configuration" >
+		<http:request-connection host="${anypoint.platform.host}" protocol="HTTPS">
+			<http:authentication >
+				<oauth:client-credentials-grant-type clientId="${anypoint.platform.client_id}" clientSecret="${anypoint.platform.client_secret}" tokenUrl="${anypoint.platform.token_url}" />
+			</http:authentication>
+		</http:request-connection>
+	</http:request-config>
+
+</mule>

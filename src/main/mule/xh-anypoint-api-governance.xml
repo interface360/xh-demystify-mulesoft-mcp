@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:mcp="http://www.mulesoft.org/schema/mule/mcp"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/mcp http://www.mulesoft.org/schema/mule/mcp/current/mule-mcp.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="what-are-the-available-governance-profile" doc:id="9970cde3-e8c0-40c4-961a-f025dc085cd4" doc:description="## MCP Tools for Listing API Governance&#10;&#10;- By Ray">
+		<mcp:tool-listener doc:name="what-are-the-available-governance-profile" doc:id="4c9f0f2b-7d76-4a04-b912-42ec5a5ef084" config-ref="MAIN_MCP_SERVER" name="what-are-the-available-governance-profile" >
+			<mcp:description ><![CDATA[Retrieve all Profiles defined in Anypoint Governance of MuleSoft Anypoint Platform. The profile name sometimes define as label.]]></mcp:description>
+			<mcp:parameters-schema ><![CDATA[{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {},
+  "required": []
+}]]></mcp:parameters-schema>
+			<mcp:responses >
+				<mcp:text-tool-response-content text="#[payload.^raw]" />
+			</mcp:responses>
+		</mcp:tool-listener>
+		<logger level="INFO" doc:name="INFO START" doc:id="601d3e08-c6fd-4656-a3e7-00835279ab5b" message='#[output json --- { "id": correlationId default uuid(),"flow": "START - what-are-the-available-governance-profile", "data": payload}]' />
+		<http:request method="GET" doc:name="Retrieve Governance Profile" doc:id="cd3d6375-571c-4bf5-ad13-d642521d99eb" config-ref="HTTP_ANYPOINT_PLATFORM" path="governance/xapi/api/v1/stats/tenant/profiles" >
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"organization" : Mule::p('mule.org_id')
+}]]]></http:query-params>
+		</http:request>
+		<ee:transform doc:name="Clean Response" doc:id="89fcfe93-2598-4135-aa70-baf2f176537c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload.profiles map (v,i) -> {
+    id: v.id.id,
+    profileId: v.id.id,
+    profileName: v.id.label,
+    (v - "id")
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="INFO END" doc:id="537bfbdc-c797-45ed-ab9c-caed5f3e44ca" message='#[output json --- { "id": correlationId default uuid(),"flow": "END - what-are-the-available-governance-profile", "data": payload}]' />
+	</flow>
+	<flow name="list-the-api-with-governance-profile-applied" doc:id="675845a5-f32a-4944-939d-004ae56f4233" doc:description="## MCP Tools for API Governance Profile with API applied&#10;&#10;- By Ray">
+		<mcp:tool-listener doc:name="list-the-api-with-governance-profile-applied" doc:id="97d419c6-d9ff-4ed2-811f-24945eb88532" config-ref="MAIN_MCP_SERVER" name="list-the-api-with-governance-profile-applied" >
+			<mcp:description ><![CDATA[Use this to get the list the target APIs that attached to the Governance Profiles.]]></mcp:description>
+			<mcp:parameters-schema ><![CDATA[{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["profileId"],
+  "properties": {
+    "profileId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID identifier for the associated governance profile"
+    }
+  },
+  "additionalProperties": false
+}
+]]></mcp:parameters-schema>
+			<mcp:responses >
+				<mcp:text-tool-response-content text="#[payload.^raw]" />
+			</mcp:responses>
+		</mcp:tool-listener>
+		<logger level="INFO" doc:name="INFO START" doc:id="16eaf126-825e-49df-a8b6-79835d88caf9" message='#[output json --- { "id": correlationId default uuid(),"flow": "START - list-the-api-with-governance-profile-applied", "data": payload}]' />
+		<set-variable value='#[payload.profileId default ""]' doc:name="profileId" doc:id="b85811bc-9a99-4686-9d62-c68c9b63b11b" variableName="profileId"/>
+		<http:request method="GET" doc:name="Retrieve Governance Profile Target" doc:id="bbf47647-5533-4df5-8667-27d18fe6e08b" config-ref="HTTP_ANYPOINT_PLATFORM" path="governance/xapi/api/v1/stats/profiles/{profileId}/targets">
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"profileId" : vars.profileId
+}]]]></http:uri-params>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"organization" : Mule::p('mule.org_id')
+}]]]></http:query-params>
+		</http:request>
+		<ee:transform doc:name="Clean Response" doc:id="6c1a24a1-75c5-41c0-93f8-bacf3e7b19bb" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload.targets map (v,i) -> {
+    apiName: v.id.label,
+    owner: v.owner.label,
+    passed: v.pass == 1,
+    organization: v.org.label,
+    version: v.version,
+    assetType:v.targetType,
+    errorCount: v.error,
+    failCount: v.fail
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="INFO END" doc:id="3b35cb09-7f10-455b-a61e-041ae66a4abf" message='#[output json --- { "id": correlationId default uuid(),"flow": "END - list-the-api-with-governance-profile-applied", "data": payload}]' />
+	</flow>
+
+</mule>

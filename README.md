@@ -28,7 +28,7 @@ Automating multi-step business processes through natural language commands to a 
 ### Step 4
 - Change the value for client_id and client_secret in the app.yaml
 ### Step 5
-- Lets run the app. Make sure your runtime version is 4.3 or above
+- Lets run the app. Make sure your runtime version is **4.9.3** or above
 - Right Click on the Project - Select Run As - Select Mule Application (configure)
 - Click Arguments tab
 - Add the `-Dmule.http.service.implementation=NETTY` to VM Arguments

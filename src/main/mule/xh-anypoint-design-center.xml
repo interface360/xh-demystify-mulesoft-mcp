@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:oauth="http://www.mulesoft.org/schema/mule/oauth" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:mcp="http://www.mulesoft.org/schema/mule/mcp"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/mcp http://www.mulesoft.org/schema/mule/mcp/current/mule-mcp.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/oauth http://www.mulesoft.org/schema/mule/oauth/current/mule-oauth.xsd">
+	<flow name="what-are-the-available-api-project" doc:id="c27f12cb-4676-4f3c-ae15-5d188da2d10e" doc:description="## MCP Tools for Displaying all API Project in Design Center&#10;&#10;- By Ray">
+		<mcp:tool-listener doc:name="what-are-the-available-api-project" doc:id="9f2dcc5c-ddfa-4736-9060-26fab51dd19f" config-ref="MAIN_MCP_SERVER" name="what-are-the-available-api-project">
+			<mcp:description ><![CDATA[Retrieve all API Specifications defined in Anypoint Design Center of MuleSoft Anypoint Platform.]]></mcp:description>
+			<mcp:parameters-schema ><![CDATA[{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {},
+  "required": []
+}]]></mcp:parameters-schema>
+			<mcp:responses >
+				<mcp:text-tool-response-content text="#[payload.^raw]" />
+			</mcp:responses>
+		</mcp:tool-listener>
+		<logger level="INFO" doc:name="INFO START" doc:id="358c1a7a-a9a3-464f-b651-5901b5d287df" message='#[output json --- { "id": correlationId default uuid(),"flow": "START - what-are-the-available-api-project", "data": payload}]'/>
+		<http:request method="GET" doc:name="Retrieve Design Center Specs" doc:id="f3b824c8-715e-49ad-bc97-974a58e69926" config-ref="HTTP_ANYPOINT_PLATFORM" path="designcenter/api-designer/projects" targetValue="#[payload.profiles default []]">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"x-owner-id" : p('mule.owner_id'),
+	"x-organization-id" : p('mule.org_id')
+}]]]></http:headers>
+		</http:request>
+		<logger level="INFO" doc:name="INFO END" doc:id="229e99c0-072e-437b-b77c-56c0eb4e5497" message='#[output json --- { "id": correlationId default uuid(),"flow": "END - what-are-the-available-api-project", "data": payload}]'/>
+	</flow>
+</mule>
