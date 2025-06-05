@@ -31,7 +31,7 @@
 ### Step 2
 - Click Developer from the right selection -> Click Edit Config and it will open a Finder or Windows Explorer
 ### Step 3
-- Open the claude_dekstop_config.json to any text editor
+- Open the **_claude_dekstop_config.json_** file to any text editor
 ### Step 4
 - Add the folowing config (**_Only use one configuration either Localhost or CloudHub_**). Make sure the Mule App is running.
 
