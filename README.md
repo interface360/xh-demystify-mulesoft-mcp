@@ -33,9 +33,40 @@
 ### Step 3
 - Open the claude_dekstop_config.json to any text editor
 ### Step 4
-- Add the folowing config
+- Add the folowing config (**_Only use one configuration either Localhost or CloudHub_**). Make sure the Mule App is running.
+
+  - **For Localhost App:**
+  ```yaml
+  {
+      "mcpServers": {
+        "xh-demystify-mulesoft-mcp": {
+          "command": "npx",
+          "args": [ 
+             "-y", "supergateway", "--sse",
+             "http://localhost:8081/sse", "--ssePath", 
+             "/sse", "--messagePath","/message"
+          ]
+        }
+      }
+  }
+  ```
+  - **For CloudHub App:**
+  ```yaml
+  {
+      "mcpServers": {
+        "xh-demystify-mulesoft-mcp": {
+          "command": "npx",
+          "args": [ 
+             "-y", "supergateway", "--sse", 
+             "https://<REPLACE_WITH_YOUR_CLOUDHUB_URL>/sse", "--ssePath", 
+             "/sse", "--messagePath","/message"
+          ]
+        }
+      }
+  }
+  ```
 ### Step 5
-- Let's restart the Claude App.
+- Let's restart the Claude App and make sure the Mule App is running (ie: Localhost or CloudHub).
 ----
 # Now what? Test MuleSoft MCP Server and MCP Client?
 - Lets test the MuleSoft MCP Server and MCP Client (ie: Cursor, Claude) by testing the scenario listed at the beginning of this exercise:
