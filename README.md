@@ -25,7 +25,7 @@ Automating multi-step business processes through natural language commands to a 
 ----
 # Let's Begin...
 ### Step 1
-- Lets create a Connected App. Login to Anypoint Platform -> Access Management -> Connected AppIf you already have an available Connected App in the Anypoint Platform, jump to step x)
+- Lets create a Connected App. Login to Anypoint Platform -> Access Management -> Connected App. If you already have an available Connected App in the Anypoint Platform, jump to step 3)
 ### Step 2
 - Create an App and name it reference to MCP demo (ie: my-1st-mcp-client-app) and save the Client_ID and Client_Secret
 ### Step 3
