@@ -47,3 +47,4 @@ reports/
 .mule/**/*
 .DS_Store
 velocity.log
+app.yaml
