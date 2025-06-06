@@ -24,7 +24,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 			<http:query-params ><![CDATA[#[output application/java
 ---
 {
-	"organization" : Mule::p('mule.org_id')
+	"organization" : Mule::p('anypoint.platform.org_id')
 }]]]></http:query-params>
 		</http:request>
 		<ee:transform doc:name="Clean Response" doc:id="89fcfe93-2598-4135-aa70-baf2f176537c" >
@@ -74,7 +74,7 @@ payload.profiles map (v,i) -> {
 			<http:query-params ><![CDATA[#[output application/java
 ---
 {
-	"organization" : Mule::p('mule.org_id')
+	"organization" : Mule::p('anypoint.platform.org_id')
 }]]]></http:query-params>
 		</http:request>
 		<ee:transform doc:name="Clean Response" doc:id="6c1a24a1-75c5-41c0-93f8-bacf3e7b19bb" >
