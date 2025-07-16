@@ -143,6 +143,18 @@ Automating multi-step business processes through natural language commands to a 
 ### Scenario 3:
 - Ask Claude to check if are there any API that use the API Governance Profile
   - `List the APIs attached to that profile.`
+
+---
+## 🚧 What’s Next?
+
+MCP transforms APIs from static definitions to intelligent, live tools. Build on it, customize it, and jumpstart your next-gen API automation—all powered by AI and MuleSoft.
+
+---
+
+## 📂 Start Exploring
+
+Ready to make your APIs AI‑aware? Dive into `MuleSoft MCP` and build the future of intelligent integrations today.
+
 # There you go!
 ### Expand what you have learned and share. Sharing of knowledge is power!
 - By Ray
