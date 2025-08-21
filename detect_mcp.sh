@@ -6,7 +6,7 @@
 #  3) Streamable HTTP endpoint (BASE + httpPath)
 #
 # Usage:
-#   ./detect_mcp_transport_v4.sh https://xh-mcp-by-ray.codecrates.xyz \
+#   ./detect_mcp.sh https://xh-mcp-by-ray.codecrates.xyz \
 #     --ssePath /mcp/sse \
 #     --messagePath /mcp/message \
 #     --httpPath /mcp \
